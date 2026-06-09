@@ -1,7 +1,6 @@
-import 'package:ecommerce_app/auth/pages/login_page.dart';
-import 'package:ecommerce_app/auth/pages/signup_page.dart';
+import 'package:ecommerce_app/core/router/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(home: SignUpPage()));
+  runApp(MaterialApp.router(routerConfig: appRouter));
 }
