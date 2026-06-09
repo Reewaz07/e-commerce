@@ -1,6 +1,8 @@
 import 'package:ecommerce_app/auth/widgets/input_text_field.dart';
+import 'package:ecommerce_app/core/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -69,7 +71,9 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 10),
                 Center(
                   child: FilledButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      SignupRoute().go(context);
+                    },
                     style: FilledButton.styleFrom(
                       backgroundColor: Colors.blue,
                       minimumSize: const Size(170, 50),
