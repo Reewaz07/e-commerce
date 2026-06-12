@@ -12,4 +12,8 @@ class ProductRepository {
     final response = await _dio.get("/products?q=$search&category=$category");
     return ProductModel.fromJson(response.data);
   }
+
+  Future<void> addToWishList(String productId) async {
+    await _dio.post('/wishlist/$productId', data: {'name': productName});
+  }
 }
