@@ -8,8 +8,8 @@ class ProductRepository {
   ProductRepository({required this.ref});
 
   Dio get _dio => ref.read(dioProvdier);
-  Future<ProductModel> getProduct() async {
-    final response = await _dio.get("/products");
+  Future<ProductModel> getProduct({String? search, String? category}) async {
+    final response = await _dio.get("/products?q=$search&category=$category");
     return ProductModel.fromJson(response.data);
   }
 }
