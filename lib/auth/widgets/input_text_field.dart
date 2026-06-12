@@ -21,7 +21,6 @@ class InputTextField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       obscureText: obscureText,
-
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
         prefixIcon: Icon(icon),

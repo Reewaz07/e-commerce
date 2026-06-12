@@ -72,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                 Center(
                   child: FilledButton(
                     onPressed: () {
-                      SignupRoute().go(context);
+                      HomePageRoute().go(context);
                     },
                     style: FilledButton.styleFrom(
                       backgroundColor: Colors.blue,
