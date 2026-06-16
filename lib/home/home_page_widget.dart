@@ -12,8 +12,7 @@ class MyWidget extends ConsumerWidget {
       child: products.maybeWhen(
         orElse: () => SizedBox(),
         data: (data) => Text(data.data.toString()),
-        error: (error, stackTrace) => Text(error),
-        loading: 
+        error: (error, stackTrace) => Text("Error"),
       ),
     );
   }

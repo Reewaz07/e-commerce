@@ -28,11 +28,14 @@ class Banners {
       id: json['id'].toString(),
       title: json['title'].toString(),
       createdAt: json['createdAt'].toString(),
-      imageUrl: json["image"].toString(),
+      imageUrl: json['imageUrl']
+          .toString(), // ✅ was json["image"], API sends "imageUrl"
       isActive: json['isActive'] as bool,
       order: json['order'] as int,
-      linkvalue: json["linkvalue"].toString(),
-      deals: json['deals'].toString(),
+      linkvalue: json["linkValue"]
+          .toString(), // ✅ was "linkvalue", API sends "linkValue"
+      deals: json['placement']
+          .toString(), // ✅ was "deals", API sends "placement"
       updatedAt: json['updatedAt'].toString(),
     );
   }

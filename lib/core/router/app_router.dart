@@ -24,7 +24,7 @@ class LoginRoute extends GoRouteData with $LoginRoute {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return LoginPage();
+    return const LoginPage();
   }
 }
 
@@ -34,7 +34,7 @@ class SignupRoute extends GoRouteData with $SignupRoute {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return SignUpPage();
+    return const SignUpPage();
   }
 }
 
@@ -44,6 +44,6 @@ class HomePageRoute extends GoRouteData with $HomePageRoute {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return HomePage();
+    return const HomePage();
   }
 }

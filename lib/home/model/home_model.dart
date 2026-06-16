@@ -6,6 +6,13 @@ class HomeModel {
   List<Featured> feature;
   List<Deal> deals;
   List<Category> categories;
+  List<Featured> newArrivals;
 
-  HomeModel(this.banners, this.feature, this.deals, this.categories);
+  HomeModel(
+    this.banners,
+    this.feature,
+    this.deals,
+    this.categories,
+    this.newArrivals,
+  );
 }
