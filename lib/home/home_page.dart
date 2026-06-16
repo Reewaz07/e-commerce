@@ -1,6 +1,8 @@
+import 'package:ecommerce_app/core/router/app_router.dart';
 import 'package:ecommerce_app/home/home_appbar.dart';
 import 'package:ecommerce_app/home/model/home_model.dart';
 import 'package:ecommerce_app/home/model/productModel/product_card_data.dart';
+import 'package:ecommerce_app/home/provider/category_notfier.dart';
 import 'package:ecommerce_app/home/provider/home_provider.dart';
 import 'package:ecommerce_app/widgets/bottom_nav_bar.dart';
 import 'package:ecommerce_app/widgets/carousel_banner.dart';
@@ -139,11 +141,21 @@ class _HomeScreenState extends ConsumerState<HomePage> {
           const SizedBox(height: 24),
 
           // ── Categories ────────────────────────────────────────────
-          CategoryList(
-            categories: home.categories,
-            selectedIndex: _selectedCategory,
-            onCategorySelected: (i) => setState(() => _selectedCategory = i),
-          ),
+          // CategoryList(
+          //   categories: home.categories,
+          //   selectedIndex: _selectedCategory,
+          //   onCategorySelected: (i) => setState(() => _selectedCategory = i),
+          // ),
+          ref
+              .watch(categoryNotifierProvider)
+              .maybeWhen(
+                orElse: () => Container(),
+                data: (data) => ListView.builder(
+                  itemBuilder: (context, index) =>
+                      ActionChip(label: Text(data[index].categoryName)),
+                ),
+              ),
+
           const SizedBox(height: 20),
 
           // ── Trust Badges ──────────────────────────────────────────
@@ -180,7 +192,7 @@ class _HomeScreenState extends ConsumerState<HomePage> {
             const SizedBox(height: 14),
             ProductCardList(
               products: featured,
-              onProductTap: (p) {},
+              onProductTap: (p) => ProductDetailRoute(id: p.id).push(context),
               onFavoriteToggle: (p) => _toggleFavorite(p.id),
             ),
             const SizedBox(height: 24),
