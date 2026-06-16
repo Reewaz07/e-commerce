@@ -13,7 +13,8 @@ class ProductRepository {
     return ProductModel.fromJson(response.data);
   }
 
-  Future<void> addToWishList(String productId) async {
-    await _dio.post('/wishlist/$productId', data: {'name': productName});
-  }
+  //   Future<void> addToWishList(String productId) async {
+  //     await _dio.post('/wishlist/$productId', data: {'name': productName});
+  //   }
+  // }
 }
